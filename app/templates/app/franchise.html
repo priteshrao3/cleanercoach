@@ -1,0 +1,102 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="uni-banner">
+    <div class="container">
+        <div class="uni-banner-text">
+            <h1>Franchise</h1>
+            <ul>
+                <li><a href="{% url 'homepage' %}">Home</a></li>
+                <li>Franchise</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="blog ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12 col-sm-12 col-12" data-aos="fade-right">
+                <div class="blog-details-text-area pr-20">
+                    <div class="blog-card mt-0">
+                        <div class="blog-card-img">
+                            <a href="blog-details.html"><img src="{% static 'app/images/inner-images/bd1.jpg' %}"
+                                    alt="image"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-15 col-sm-12 col-12" data-aos="fade-left">
+                <div class="sidebar-content pt-30">
+                    <div class="sidebar-card search-box">
+                        <div class="news-input-card">
+                            <button class="default-button">
+                                <a href="{% url 'contact' %}"><span class="text-white">Join us Now</span></a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="sidebar-card categories mt-30">
+                        <h3>Our Services</h3>
+                        <ul>
+                            {% for service in services %}
+                            <li class="nav-item">
+                                <a class="dropdown-item" href="{% url 'service-details' service.title_to_url%}">
+                                    {{service.Service_Title}}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text-para-franchise">
+    <h4>Do You Want A Personalized Cleaning Service?</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt labore et dolore magna
+        aliqua Ut enim ad minim veniam, quis nostrud exercitation ullamc laboris nisi ut aliquip commodo consequat. Duis
+        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur commodo. Lorem
+        ipsum dolor sit amet consectetur adipisicing elit. Voluptatem necessitatibus dolor placeat fuga deleniti
+        doloremque? Ratione officia quia aliquam possimus.</p>
+    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium sed doloremque laudantium, totam rem
+        aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
+        enim ipsam voluptatem quia.</p>
+    <h4>Lowest Service Fees</h4>
+    <p>The business offering of cleaning companies to their franchisees are very similar but at CleanMe we have gone a
+        step further and are offering franchises at the best available purchase price. Not only that we charge the
+        lowest service fees available in the entire New Zealand cleaning market which means that you get to keep more of
+        your hard earned money. Proof is in the pudding and we urge you to shop around.</p>
+    <h4>Start-up</h4>
+    <p>Starting a new business can be quite daunting not knowing where to begin. At CleanMe we understand this
+        completely and from the get go we will supply you all the gear which is part of the start-up package. This
+        includes;</p>
+    <h4>Traning</h4>
+    <p>To ensure that the legal rights of both parties which is (us) the Franchisor and (you) as the Franchisee are
+        protected, requires a franchise agreement to be signed which has legal binding. The agreement is laid in a very
+        simple layout without any fine print or complicated language. We seriously urge you to run this past your legal
+        advisors for approval.</p>
+    <p>All our franchisees have to undergo a Police Security Check, this is a mandatory requirement as our customers
+        have to be completely confident about who is on their sites and can be trusted. Security clearance is the only
+        reason we conduct these and hold these on file and may be presented to the clients or the franchisees upon
+        request.</p>
+</div>
+
+<div class="ctarea mt-4" data-aos="zoom-in-left">
+    <div class="container">
+        <div class="row height-350 align-items-center">
+            <div class="col-lg-9">
+                <div class="cta-text">
+                    <h2>Call now for a no obligation free quote on 0800867567</h2>
+                    <p> Ready to free up your time and let us do the dirty work!</p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <a class="default-button" href="{% url 'contact' %}"><span>Join us Now</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

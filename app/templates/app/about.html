@@ -1,0 +1,63 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="uni-banner">
+    <div class="container">
+        <div class="uni-banner-text">
+            <h1>About Us</h1>
+            <ul>
+                <li><a href="{% url 'homepage' %}">Home</a></li>
+                <li>About Us</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="about about-1 ptb-100" data-aos="fade-right">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="about-img-area">
+                    <div class="about-img-1">
+                        <img src="{% static 'app/images/about/rise.png.png' %}" alt="image">
+                    </div>
+                    <!-- <div class="about-img-2">
+<img src="assets/images/about/385.jpeg" alt="image">
+<a class="video-popup" href="https://www.youtube.com/watch?v=0qNsC-NLuhM"><i class="flaticon-play-button"></i></a>
+</div> -->
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12" data-aos="fade-left">
+                <div class="about-text-area">
+                    <div class="default-section-title">
+                        <h6>ABOUT US</h6>
+                        <h4>We are the team fully Protected & Carefully Cleaning Specialists.</h4>
+                    </div>
+                    <p>Couch Cleaner, NZ offers comprehensive sofa cleaning and our services include sofa, Recliner Arm
+                        Chair, Upholstery, Leather Sofa, lounge suite and other fabric cleaning. We have the best
+                        cleaning agents and most experienced cleaning technicians in our arsenal and our cleaning
+                        procedures use only approved cleaning agents to add high gloss and shine to your sofa
+                        upholstery.</p>
+                    <P>Our cleaning solutions are need specified and we use the right cleaning solutions, stain and
+                        odour removers that are environment safe. Our services are focused on Auckland Region and our
+                        outfit is 100% Kiwi owned. Our services also undertake quick drying upholstery cleaning services
+                        that will save time and money for you.</P>
+                    <p>Our services are focused on Auckland Region and our outfit is 100% Kiwi owned. Our services also
+                        undertake quick drying upholstery, carpet and floor cleaning services that will save time and
+                        money for you.</p>
+                    <a class="default-button" href="{% url 'about' %}"><span>Read More</span></a>
+                    <div class="fun-facts-area">
+                        <div class="row justify-content-center">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Heading & Booking btn start-->
+{% include 'app/booknow.html' %}
+<!-- Heading & Booking btn End-->
+{% endblock content %}

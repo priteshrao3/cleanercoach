@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx" class="theme-light">
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cleaning Services Company</title>
+
+<link rel="stylesheet" href="{% static 'app/css/animate.min.css' %}">
+<link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'app/css/fontawsome.min.css' %}">
+<link rel="stylesheet" href="{% static 'app/css/flaticon.css' %}">
+<link rel="stylesheet" href="{% static 'app/css/meanmenu.min.css' %}">
+<link rel="stylesheet" href="{% static 'app/css/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'app/css/nice-select.min.css' %}">
+<link rel="stylesheet" href="{% static 'app/css/barfiller.css' %}">
+<link rel="stylesheet" href="{% static 'app/css/magnific-popup.css' %}">
+<link rel="stylesheet" href="{% static 'app/css/odometer.min.css' %}">
+<link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'app/css/dark-mode.css' %}">
+<link rel="stylesheet" href="{% static 'app/css/responsive.css' %}">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="icon" type="image/png" href="{% static 'app\images\fav-icon.png' %}">
+</head>
+
+<body>
+
+    <!-- Start header Section -->
+    <div class="topbar" data-aos="fade-right">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="topbar-left-side">
+                        <ul>
+                            <li><i class="fas fa-phone-alt"></i> <a href="tel:0800867567">0800867567</a></li>
+                            <li><i class="fas fa-clock"></i> Mon To Fri 9:00am To 6:00pm</li>
+                            <li><i class="fas fa-envelope"></i><a
+                                    href="mailto:Info@cleanercouch.co.nz">Info@cleanercouch.co.nz </a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End header Section -->
+
+    <!-- Start Nav Section -->
+    <div class="header-area">
+        <div class="navbar-area" data-aos="fade-right">
+            <div class="main-responsive-nav">
+                <div class="container">
+                    <div class="mobile-nav">
+                        <a href="{% url 'homepage' %}" class="logo">
+                            <img class="black-logo" src="{% static 'app/images/logo.png' %}" alt="logo" />
+                            <img class="white-logo" src="{% static 'app/images/white-logo.png' %}" alt="logo" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="main-nav">
+                <div class="container">
+                    <nav class="navbar navbar-expand-md navbar-light">
+                        <a class="navbar-brand" href="{% url 'homepage' %}">
+                            <img class="black-logo" src="{% static 'app/images/logo.png' %}" alt="logo" />
+                            <img class="white-logo" src="{% static 'app/images/white-logo.png' %}" alt="logo" />
+                        </a>
+                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                            <ul class="navbar-nav">
+                                <li class="nav-item plus-icon">
+                                <li class="nav-item"><a href="{% url 'homepage' %}" class="nav-link">Home </a></li>
+                                <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About Us</a></li>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link dropdown-toggle">Services</i></a>
+                                    <ul class="dropdown-menu">
+                                        {% for service in services %}
+                                        <li class="nav-item">
+                                            <a class="dropdown-item"
+                                                href="{% url 'service-details' service.title_to_url%}">
+                                                {{service.Service_Title|title}}</a>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                                <li class="nav-item"><a href="{% url 'gallery' %}" class="nav-link">Gallary</a></li>
+                                <li class="nav-item"><a href="{% url 'franchise' %}" class="nav-link">franchise</a></li>
+                                <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact Us</a></li>
+                            </ul>
+
+                            <div class="menu-sidebar menu-sidebar-1">
+                                <ul>
+                                    <li><a class="default-button" href="{% url 'contact' %}"><span>Get Quote</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Nav Section -->
+
+
+
+    {% block content %}{% endblock content %}
+
+    <!-- Footer area start end -->
+    <div class="footer footer-2 ptb-100 bg-000000">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="zoom-in-up">
+                    <div class="footer-logo-area">
+                        <a href="{% url 'homepage' %}"><img src="{% static 'app/images/white-logo.png' %}"
+                                alt="image"></a>
+                        <p>With Cleaner Couch our vison is to provide quick, efficient cleaning services so you enjoy
+                            deep cleaned fresh and healthier sofa for your home and business. Engage our expert cleaning
+                            services to keep your Sofas & Furniture gleaming with pristine glow.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="zoom-in-up">
+                    <div class="footer-links footer-contact-list">
+                        <h3>Get In Touch</h3>
+                        <div class="footer-content-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h5>Location:</h5>
+                            <p><a>New Lynn Auckland, New Zealand</a></p>
+                        </div>
+                        <div class="footer-content-card">
+                            <i class="fas fa-envelope"></i>
+                            <h5>Email:</h5>
+                            <p><i class="far fa-envelope"></i><a
+                                    href="mailto: Info@cleanercouch.co.nz">Info@cleanercouch.co.nz</a></p>
+                        </div>
+                        <div class="footer-content-card">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h5>Phone:</h5>
+                            <p><a href="tel:0800867567">0800867567</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="zoom-in-up">
+                    <div class="footer-links footer-quick-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="{% url 'about' %}" target="_blank"><i class="fas fa-angle-right"></i> <span>About Us</span></a></li>
+                            <li><a href="{% url 'gallery' %}" target="_blank"><i class="fas fa-angle-right"></i><span>Gallary</span></a></li>
+                            <li><a href="{% url 'franchise' %}" target="_blank"><i class="fas fa-angle-right"></i><span>franchise</span></a></li>
+                            <li><a href="{% url 'contact' %}" target="_blank"><i class="fas fa-angle-right"></i><span>Contact us</span></a></li>
+                            <li><a href="{% url 'contact' %}" target="_blank"><i class="fas fa-angle-right"></i><span>Get Quote</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="zoom-in-up">
+                    <div class="footer-links footer-quick-links">
+                        <h3>Our Services</h3>
+                        <ul>
+                            {% for service in services %}
+                            <li class="nav-item">
+                                <a class="dropdown-item" href="{% url 'service-details' service.title_to_url%}">
+                                    <i class="fas fa-angle-right"></i>{{service.Service_Title}}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+   <!-- Copywrite section start -->
+   <div class="copyright bg-000000">
+    <div class="container">
+        <p>Copyright CleanerCouch 2023 ! Developed By <a target="_blank" href="https://speedyweb.co.nz/">SpeedyWeb
+                Technologies </a></p>
+        <p><a target="_blank" href="{% url 'terms-and-conditions' %}">Terms & Conditions</a></p>
+    </div>
+</div>
+
+<!-- Copywrite section END -->
+
+
+    <div class="go-top"><img src="{% static 'app/images/png/002-top.png' %}" alt></div>
+
+    <!-- WhatsApp section END -->
+    <a class="whatsapp"
+        href="https://wa.me/+64272683539?text=Yes%20i%20am%20interested%20in%20your%20servises">
+        <img src="{% static 'app/images/whatsappicon.png'%}" width="50px" alt="whatsapp logo">
+    </a>
+    <!-- WhatsApp section END -->
+
+    <script src="{% static 'app/js/jquery.min.js' %}"></script>
+    <script src="{% static 'app/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'app/js/meanmenu.js' %}"></script>
+    <script src="{% static 'app/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'app/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'app/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'app/js/form-validator.min.js' %}"></script>
+    <script src="{% static 'app/js/contact-form-script.js' %}"></script>
+    <script src="{% static 'app/js/ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'app/js/appear.min.js' %}"></script>
+    <script src="{% static 'app/js/TweenMax.js' %}"></script>
+    <script src="{% static 'app/js/odometer.min.js' %}"></script>
+    <script src="{% static 'app/js/jquery.barfiller.js' %}"></script>
+    <script src="{% static 'app/js/custom.js' %}"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000 })</script>
+
+</body>
+</html>

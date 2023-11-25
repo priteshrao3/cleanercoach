@@ -1,0 +1,128 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="uni-banner">
+    <div class="container">
+        <div class="uni-banner-text">
+            <h1>Contact</h1>
+            <ul>
+                <li><a href="{% url 'homepage' %}">Home</a></li>
+                <li>Contact</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="contact-page ptb-100" data-aos="fade-right">
+    <div class="container">
+        <div class="default-section-title">
+            <h6>SEND MESSAGE</h6>
+            <h3>We Are Here To Help You</h3>
+        </div>
+        <div class="section-content">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                    <div class="contact-card-area">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="contact-card">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <h4>Our Location</h4>
+                                    <p>New Lynn Auckland, New Zealand</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="contact-card">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <h4>Our Phone</h4>
+                                    <p><a href="tel:0800867567">0800867567</a></p>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="contact-card">
+                                    <i class="far fa-envelope"></i>
+                                    <h4>Our Email</h4>
+                                    <p><a href="mailto:Info@cleanercouch.co.nz">Info@cleanercouch.co.nz </a></p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                    <div class="contact-page-form-area" style="background-color: #ff630e;">
+                        <div class="contact-form bd-form details-text-area">
+                            <h2>Send Your Message</h2>
+
+                            <form action='' method="post">
+                                {% csrf_token %}
+                                <div class="row">
+
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-2">
+                                    <div class="booking-form-content">
+                                        <input type="text" class="form-control" id="nameid" placeholder="Your Name" required name="name">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-2">
+                                    <div class="booking-form-content">
+                                        <input type="Email" class="form-control" id="emailid" placeholder="Email Address" required	name="email">
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
+                                    <div class="booking-form-content">
+                                        <input type="text" class="form-control" id="subjectid" placeholder="Subject" name="subject">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
+                                    <div class="booking-form-content">
+                                        <input type="text" class="form-control" id="phoneid" placeholder="Mobile Number" required name="phone">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 mt-3">
+                                    <div class="form-group">
+                                        <textarea name="message" class="form-control" id="messageid" cols="30"
+                                            rows="4" placeholder="Enter your job desctiption here" required
+                                            data-error="Write your message"></textarea>
+                                        <div class="help-block with-errors"></div>
+                                        <i class="ri-pencil-line"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="booking-form-content">
+                                <button class="default-button" id="btnsub" type="submit"><span>Submit Details</span></button>
+                                </div>
+                                </div>
+                                </div>
+                            </form>
+
+                            {% if messages %}
+                            <ul class="message">
+                                {% for message in messages %}
+                                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}> {{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="google-map">
+    <iframe class="g-map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3189.9457075174446!2d174.66699341514808!3d-36.915562479924965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d415e06c778fd%3A0x8412dc8a92c624eb!2s111%20Titirangi%20Road%2C%20New%20Lynn%2C%20Auckland%200600%2C%20New%20Zealand!5e0!3m2!1sen!2sin!4v1676210713300!5m2!1sen!2sin"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<!-- Heading & Booking btn start-->
+{% include 'app/booknow.html' %}
+<!-- Heading & Booking btn End-->
+{% endblock content %}
